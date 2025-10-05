@@ -4,8 +4,8 @@ import { Provider } from "@/components/provider";
 import { Poppins } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Social App",
-  description: "Nextjs, MongoDB Social app",
+  title: "Basic Next.js Starter",
+  description: "A minimal Next.js starter template with TypeScript and Tailwind CSS",
 };
 
 export default function RootLayout({
