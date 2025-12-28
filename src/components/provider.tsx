@@ -1,8 +1,9 @@
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import type * as React from "react";
-import { Toaster } from "sonner";
+import * as React from "react";
+
+import { Toaster } from "./ui/sonner";
 
 export function Provider({
   children,
