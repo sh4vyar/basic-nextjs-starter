@@ -1,21 +1,22 @@
 "use client";
 
-import { cva, type VariantProps } from "class-variance-authority";
-import { AlertTriangle, Check, Info, X } from "lucide-react";
+import type { VariantProps } from "class-variance-authority";
 import type React from "react";
-import { toast as sonnerToast } from "sonner";
 import { cn } from "@/lib/utils";
+import { cva } from "class-variance-authority";
+import { AlertTriangle, Check, Info, X } from "lucide-react";
+import { toast as sonnerToast } from "sonner";
 
 // === Toast container variants ===
 export const toastVariants = cva(
-  "pointer-events-auto flex p-2 items-center overflow-hidden rounded-lg border shadow-lg transition-all duration-300 ease-in-out",
+  "pointer-events-auto flex items-center overflow-hidden rounded-lg border p-2 shadow-lg transition-all duration-300 ease-in-out",
   {
     variants: {
       variant: {
-        default: "bg-background shadow border-border",
-        success: "bg-background shadow border-border",
-        error: "bg-background shadow border-border",
-        warning: "bg-background shadow border-border",
+        default: "bg-background border-border shadow",
+        success: "bg-background border-border shadow",
+        error: "bg-background border-border shadow",
+        warning: "bg-background border-border shadow",
       },
       size: {
         default: "h-16 min-w-sm",
@@ -27,7 +28,7 @@ export const toastVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
 // === Icon variants ===
@@ -45,12 +46,13 @@ const toastIconVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
 // === Toast Component ===
 interface ToastProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "id">,
+  extends
+    Omit<React.HTMLAttributes<HTMLDivElement>, "id">,
     VariantProps<typeof toastVariants> {
   toastId: string | number;
   title: string;
@@ -71,7 +73,7 @@ const Toast = ({
       className={cn(
         toastVariants({ variant, size }),
         "group flex items-center justify-center",
-        className,
+        className
       )}
       {...props}
     >
@@ -124,7 +126,7 @@ export function showToast({
   position = "bottom-right",
 }: ToastOptions) {
   sonnerToast.custom(
-    (id) => (
+    id => (
       <Toast
         toastId={id}
         title={title}
@@ -136,6 +138,6 @@ export function showToast({
     {
       duration,
       position,
-    },
+    }
   );
 }

@@ -5,23 +5,27 @@ A minimal Next.js starter template with TypeScript, Tailwind CSS, and essential 
 ## Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/sh4vyar/basic-nextjs-starter.git
 cd basic-nextjs-starter
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 pnpm dev
 ```
